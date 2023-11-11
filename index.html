@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leader Board</title>
+    <link href="/dist/output.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script defer src="script.js"></script>
+
+</head>
+
+<body>
+    <div class="container w-10/12 mx-auto">
+        <h1 class="text-center text-5xl font-semibold my-7">LeaderBoard</h1>
+        <from class="form_wrapper w-full  grid grid-cols-5 gap-2">
+            <input type="text" placeholder="First Name" class="input input-bordered input-accent" />
+            <input type="text" placeholder="Last Name" class="input input-bordered input-accent" />
+            <input type="text" placeholder="Country" class="input input-bordered input-accent" />
+            <input type="text" placeholder="Score" class="input input-bordered input-accent" />
+            <button type="submit" class="btn btn-accent">Add Player</button>
+        </from>
+
+
+        <div class="leader_board_table overflow-x-auto mt-10">
+            <table class="table">
+                <!-- head -->
+                <thead>
+                    <tr class="text-lg border-b-2">
+                        <th>Position</th>
+                        <th>Name</th>
+                        <th>Country</th>
+                        <th>Score</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>1</th>
+                        <td>Cy Ganderton</td>
+                        <td>Quality Control Specialist</td>
+                        <td>100</td>
+                        <td class="actions flex gap-4 items-center">
+                                <button class="btn btn-xs btn-outline btn-accent">-5</button>
+                                <button class="btn btn-xs btn-outline btn-accent">+5</button>
+                            <i class="deleteBtn fa-regular fa-trash-can text-red-600 cursor-pointer"></i>
+                        </td>
+                    </tr>
+                   
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</body>
+
+</html>
