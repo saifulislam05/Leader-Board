@@ -17,13 +17,13 @@
 <body>
     <div class="container w-10/12 mx-auto">
         <h1 class="text-center text-5xl font-semibold my-7">LeaderBoard</h1>
-        <from class="form_wrapper w-full  grid grid-cols-5 gap-2">
-            <input type="text" placeholder="First Name" class="input input-bordered input-accent" />
-            <input type="text" placeholder="Last Name" class="input input-bordered input-accent" />
-            <input type="text" placeholder="Country" class="input input-bordered input-accent" />
-            <input type="text" placeholder="Score" class="input input-bordered input-accent" />
-            <button type="submit" class="btn btn-accent">Add Player</button>
-        </from>
+        <form id="form" class="form_wrapper w-full  grid grid-cols-5 gap-2">
+            <input id="firstName" type="text" placeholder="First Name" class="input input-bordered input-accent" />
+            <input id="lastName" type="text" placeholder="Last Name" class="input input-bordered input-accent" />
+            <input id="country" type="text" placeholder="Country" class="input input-bordered input-accent" />
+            <input id="score" type="text" placeholder="Score" class="input input-bordered input-accent" />
+            <button id="addBtn" type="submit" class="btn btn-accent">Add Player</button>
+        </form>
 
 
         <div class="leader_board_table overflow-x-auto mt-10">
@@ -31,16 +31,16 @@
                 <!-- head -->
                 <thead>
                     <tr class="text-lg border-b-2">
-                        <th>Position</th>
+                        <th>Rank</th>
                         <th>Name</th>
                         <th>Country</th>
                         <th>Score</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th>1</th>
+                <tbody id="tableBody">
+                    <!-- <tr>
+                        <td>1</td>
                         <td>Cy Ganderton</td>
                         <td>Quality Control Specialist</td>
                         <td>100</td>
@@ -50,7 +50,7 @@
                             <i class="deleteBtn fa-regular fa-trash-can text-red-600 cursor-pointer"></i>
                         </td>
                     </tr>
-                   
+                    -->
                 </tbody>
             </table>
         </div>
