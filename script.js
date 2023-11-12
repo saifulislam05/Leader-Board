@@ -69,8 +69,6 @@ function renderUi(data) {
   const rankedPlayers = rankPlayers(sortedData);
 
   let fragment = new DocumentFragment();
-
-  console.log(rankedPlayers);
   rankedPlayers.forEach((singleData, index) => {
     const { rank, firstName, lastName, country, score } = singleData;
 
@@ -116,6 +114,19 @@ function addData(event) {
   const lastNameValue = lastName.value;
   const countryValue = country.value;
   const scoreValue = score.value;
+
+  // Preventing to submit if any input field is empty
+  if (
+    firstNameValue === "" ||
+    lastNameValue === "" ||
+    countryValue === "" ||
+    scoreValue === ""
+  ) {
+    document.getElementById("alert").classList.remove("hidden");
+    return;
+  } else if (!document.getElementById("alert").classList.contains("hidden")) {
+    document.getElementById("alert").classList.add("hidden");
+  }
 
   // Create a new player object
   const obj = {
