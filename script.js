@@ -87,6 +87,34 @@ function addData(event) {
   renderUi(playersData);
 }
 
+tableBody.addEventListener("click", (e) => {
+  const index = e.target.closest(".actions").id;
+  if (e.target.classList.contains("decrease")) {
+    decreaseScore(index);
+  } else if (e.target.classList.contains("increase")) {
+    increaseScore(index);
+  } else if (e.target.classList.contains("deleteBtn")) {
+    removePlayer(index);
+  }
+});
+
+function decreaseScore(index) {
+  playersData[index].score = playersData[index].score - 5;
+  renderUi(playersData);
+}
+function increaseScore(index) {
+  playersData[index].score = playersData[index].score + 5;
+  renderUi(playersData);
+}
+function removePlayer(index) {
+  playersData.splice(index, 1);
+  renderUi(playersData);
+}
+
+
+
+
+
 
 
 
