@@ -2,6 +2,8 @@
 
 A simple leaderboard application to manage and display player scores. The app allows users to add new players, update scores, and delete players. It also features a trophy icon for the top-ranked player.
 
+## Demo 👇
+[Leader Board](https://leader-board-bysaiful.netlify.app/)
 ## Features
 
 - **Add Players:** Add new players with their first name, last name, country, and initial score.
