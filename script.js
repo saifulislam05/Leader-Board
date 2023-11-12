@@ -122,7 +122,7 @@ function addData(event) {
     firstName: firstNameValue,
     lastName: lastNameValue,
     country: countryValue,
-    score: scoreValue,
+    score: Number(scoreValue),
   };
 
   // Add the new player to the data and render the updated UI
