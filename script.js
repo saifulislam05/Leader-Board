@@ -35,18 +35,21 @@ const lastName = document.getElementById("lastName");
 const country = document.getElementById("country");
 const score = document.getElementById("score");
 const addBtn = document.getElementById("addBtn");
+
 const tableBody = document.getElementById("tableBody");
 
 document.addEventListener("DOMContentLoaded", renderUi(playersData));
 
 function renderUi(data) {
-  let sortedData = sortData(data);
+  const sortedData = sortData(data);
+  const rankedPlayers = rankPlayers(sortedData);
   let fragment = new DocumentFragment();
 
-  sortedData.forEach((singleData, index) => {
-    const { firstName, lastName, country, score } = singleData;
+  console.log(rankedPlayers);
+  rankedPlayers.forEach((singleData, index) => {
+    const { rank, firstName, lastName, country, score } = singleData;
     let row = document.createElement("tr");
-    row.innerHTML = `<td>1</td>
+    row.innerHTML = `<td>${rank}</td>
                         <td>${firstName} ${lastName}</td>
                         <td>${country}</td>
                         <td>${score}</td>
@@ -69,7 +72,7 @@ function sortData(data) {
 addBtn.addEventListener("click", addData);
 
 function addData(event) {
-  event.preventDefault(); 
+  event.preventDefault();
 
   const firstNameValue = firstName.value;
   const lastNameValue = lastName.value;
@@ -77,8 +80,8 @@ function addData(event) {
   const scoreValue = score.value;
 
   const obj = {
-   firstName: firstNameValue,
-    lastName:lastNameValue,
+    firstName: firstNameValue,
+    lastName: lastNameValue,
     country: countryValue,
     score: scoreValue
   };
@@ -109,6 +112,21 @@ function increaseScore(index) {
 function removePlayer(index) {
   playersData.splice(index, 1);
   renderUi(playersData);
+}
+
+// Ranking each players on their score
+
+
+function rankPlayers(data) {
+  let currentRank = 0;
+  let previousScore = -1;
+  return data.map(player => {
+    if (player.score != previousScore) {
+      previousScore = player.score;
+      currentRank++;
+    }
+    return { ...player, rank: currentRank }
+  });
 }
 
 
